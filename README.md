@@ -4,13 +4,17 @@
 
 # Team Members:
 Guy Myer  
+
 David Moreno  
+
 Mariana Munoz: https://github.com/Mariana-Munoz-70445
+
 Nadia Nazeem: https://github.com/nadianaz07  
+
 Kevin Behlke  
 
 
-# Project Overview
+# Project Overview 
 
 This project models a drone-based delivery system designed to improve efficiency in last-mile urban logistics. Last-mile delivery refers to the final stage of the supply chain, where goods are transported from a local hub to the customer’s door. Although it is the shortest part of the delivery process, it is often the most complex and expensive due to factors such as traffic congestion, frequent stops, and the need for individualized deliveries in urban environments.
 
@@ -25,6 +29,13 @@ The primary focus of this system is:
 
 Our goal is to design a system that keeps drone delivery operations efficient, safe, and scalable by enforcing key constraints such as drone status validation, maintenance tracking, and charging station limitations.
 
+# Business Rules
+
+The system enforces the following rules:
+
+1. Drones must have a valid status (In-Flight, Charging, Maintenance) before being assigned to a trip.  
+2. Maintenance logs must be created when a drone exceeds 50 flight hours.  
+3. Charging stations can only serve one drone at a time, with start and end times recorded.
 
 # Data Model
 <img width="1270" height="801" alt="Screenshot 2026-04-02 215114" src="https://github.com/user-attachments/assets/cae8f091-7f6f-4a00-97c3-cb9eb8acadf8" />
@@ -41,24 +52,12 @@ Shipping destinations are connected to packages to represent delivery endpoints,
 
 The model also supports key operational constraints. Charging stations and charging sessions track when and where drones are charging, ensuring that only one drone occupies a station at a given time. In addition, maintenance logs track drone usage and enforce servicing once flight-hour thresholds are exceeded. These constraints help maintain safety and prevent operational conflicts.
 
-
-# Business Rules
-
-The system enforces the following rules:
-
-1. Drones must have a valid status (In-Flight, Charging, Maintenance) before being assigned to a trip.  
-2. Maintenance logs must be created when a drone exceeds 50 flight hours.  
-3. Charging stations can only serve one drone at a time, with start and end times recorded.
-
 # Data Dictionary
 [Mist 4610 data dict.pdf](https://github.com/user-attachments/files/26470808/Mist.4610.data.dict.pdf)
-<img width="1049" height="666" alt="image" src="https://github.com/user-attachments/assets/10a13c78-93f7-4aaf-a238-94b1d95b2183" />
-<img width="1019" height="502" alt="image" src="https://github.com/user-attachments/assets/98723756-8e2f-4d84-82cd-8007cee29b54" />
-<img width="997" height="614" alt="image" src="https://github.com/user-attachments/assets/39636345-1671-4c54-b3b3-2009bb58f76e" />
-<img width="974" height="578" alt="image" src="https://github.com/user-attachments/assets/29faf1a8-8ed8-488f-b978-fb18302c0daa" />
-<img width="872" height="809" alt="image" src="https://github.com/user-attachments/assets/2a736fe3-41b1-46a1-ae74-3c7a94ac3063" />
-<img width="885" height="891" alt="image" src="https://github.com/user-attachments/assets/d2896de8-b79a-483d-be78-564bb850d190" />
-<img width="887" height="380" alt="image" src="https://github.com/user-attachments/assets/c3353830-5f7d-4cf5-bbe6-d23b401ce89d" />
+<img width="846" height="927" alt="image" src="https://github.com/user-attachments/assets/3232a2d6-6118-489d-b2f4-c679b631c3e4" />
+<img width="845" height="929" alt="image" src="https://github.com/user-attachments/assets/7f350c78-993f-4760-b760-274e2067823f" />
+<img width="809" height="882" alt="image" src="https://github.com/user-attachments/assets/9625a715-4f4a-4bad-a760-15ca047c8301" />
+<img width="734" height="935" alt="image" src="https://github.com/user-attachments/assets/0f927258-f264-491e-ad57-b7d7d8625ad3" />
 <img width="734" height="911" alt="image" src="https://github.com/user-attachments/assets/814b5fc8-cd16-4d5d-9ab4-07ad5c40ab7a" />
 
 
