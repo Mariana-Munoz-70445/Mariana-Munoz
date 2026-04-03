@@ -5,8 +5,8 @@
 # Team Members:
 Guy Myer  
 David Moreno  
-Mariana Munoz  
-Nadia Nazeem  
+Mariana Munoz: https://github.com/Mariana-Munoz-70445
+Nadia Nazeem: https://github.com/nadianaz07  
 Kevin Behlke  
 
 
@@ -51,6 +51,16 @@ The system enforces the following rules:
 3. Charging stations can only serve one drone at a time, with start and end times recorded.
 
 # Data Dictionary
+[Mist 4610 data dict.pdf](https://github.com/user-attachments/files/26470808/Mist.4610.data.dict.pdf)
+<img width="1049" height="666" alt="image" src="https://github.com/user-attachments/assets/10a13c78-93f7-4aaf-a238-94b1d95b2183" />
+<img width="1019" height="502" alt="image" src="https://github.com/user-attachments/assets/98723756-8e2f-4d84-82cd-8007cee29b54" />
+<img width="997" height="614" alt="image" src="https://github.com/user-attachments/assets/39636345-1671-4c54-b3b3-2009bb58f76e" />
+<img width="974" height="578" alt="image" src="https://github.com/user-attachments/assets/29faf1a8-8ed8-488f-b978-fb18302c0daa" />
+<img width="872" height="809" alt="image" src="https://github.com/user-attachments/assets/2a736fe3-41b1-46a1-ae74-3c7a94ac3063" />
+<img width="885" height="891" alt="image" src="https://github.com/user-attachments/assets/d2896de8-b79a-483d-be78-564bb850d190" />
+<img width="887" height="380" alt="image" src="https://github.com/user-attachments/assets/c3353830-5f7d-4cf5-bbe6-d23b401ce89d" />
+<img width="734" height="911" alt="image" src="https://github.com/user-attachments/assets/814b5fc8-cd16-4d5d-9ab4-07ad5c40ab7a" />
+
 
 # Simple Queries:
 
@@ -104,7 +114,8 @@ The system enforces the following rules:
 
 #### SELECT *, CASE 	WHEN battery > 67 THEN "Good to go"       WHEN battery > 33 THEN "Monitor Battery" WHEN battery <= 32 THEN "Charge Soon" END AS BatteryLevel FROM Drone WHERE status = "In-Flight";
 
-<img width="640" height="74" alt="image" src="https://github.com/user-attachments/assets/4053fae7-fc43-4611-bcff-322db90ba289" />
+<img width="872" height="102" alt="image" src="https://github.com/user-attachments/assets/64bd169e-1daa-423f-b661-4983b993598a" />
+
 
 ## This query lists all of the drones, their ids, their current status, their total trips made, and their total distance traveled.
 ### Managerial Explanation: This query gives managers a stronger view of drone productivity by combining operational status with trip count and total distance traveled. It helps identify the most heavily used drones, compare fleet performance, and support decisions about workload balancing, resource planning, and maintenance scheduling.
@@ -127,12 +138,7 @@ The system enforces the following rules:
 
 <img width="250" height="148" alt="image" src="https://github.com/user-attachments/assets/f4282411-8081-460a-9203-cf4e81eecc9f" />
 
-## EXISTS: Find technicians who have performed at least one maintenance job
-### Managerial Explanation:This query helps managers confirm which technicians are actively contributing to maintenance operations. It can be useful for workforce evaluation, staffing reviews, and understanding which personnel are involved in maintaining fleet readiness.
-
-#### SELECT Technicians.technicianID, Technicians.techniciansFName, Technicians.techniciansLName FROM Technicians WHERE EXISTS (    SELECT * FROM maintenance_logs  WHERE maintenance_logs.Technicians_technicianID = Technicians.technicianID );
-
-<img width="430" height="225" alt="image" src="https://github.com/user-attachments/assets/b667a269-68d2-406b-aff1-9cbe3b62db0c" />
+#REPLACE, NEW COMPLEX QUERY 
 
 ## Find drones that have at least one trip over 10 miles
 ### Managerial Explanation: This query helps managers identify drones that are being used for longer-distance deliveries. This is useful for evaluating route demands, determining which drones are handling more intensive assignments, and assessing whether long-distance trips are being assigned appropriately based on drone capability and battery constraints.
