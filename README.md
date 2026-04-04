@@ -62,6 +62,22 @@ The model also supports key operational constraints. Charging stations and charg
 <img width="734" height="935" alt="image" src="https://github.com/user-attachments/assets/0f927258-f264-491e-ad57-b7d7d8625ad3" />
 <img width="734" height="911" alt="image" src="https://github.com/user-attachments/assets/814b5fc8-cd16-4d5d-9ab4-07ad5c40ab7a" />
 
+# `USE ns_Sp26_71552_Group4;`
+
+All queries included in this project were implemented as stored procedures in MySQL Workbench and follow the required naming convention:
+
+- `TP_Q1`
+- `TP_Q2`
+- `TP_Q3`
+- `TP_Q4`
+- `TP_Q5`
+- `TP_Q6`
+- `TP_Q7`
+- `TP_Q8`
+- `TP_Q9`
+
+Each stored procedure corresponds to one of the queries presented in this README and was used to support the operational and managerial insights discussed throughout the project.
+
 # Simple Queries:
 
 ## Drone and status 
@@ -134,6 +150,3 @@ The model also supports key operational constraints. Charging stations and charg
 #### SELECT Route.areaCode, COUNT(Trip.tripID) AS TotalTrips, SUM(Trip.tripDistance) AS TotalDistance, AVG(Trip.tripDistance) AS AvgTripDistance, COUNT(DISTINCT Trip.Drone_droneID) AS DronesUsed, COUNT(Packages.packageID) AS TotalPackages, CASE     WHEN COUNT(Trip.tripID) >= 10 AND COUNT(DISTINCT Trip.Drone_droneID) <= 2 THEN 'Needs More Drones'    WHEN COUNT(Trip.tripID) >= 5 THEN 'Monitor Demand' ELSE 'Current Capacity is Fine' END AS AreaDemandStatus FROM Route LEFT JOIN Trip    ON Route.routeID = Trip.Route_routeID LEFT JOIN Trip_Packages     ON Trip.tripID = Trip_Packages.Trip_TripID LEFT JOIN Packages     ON Trip_Packages.Packages_packageID = Packages.packageID GROUP BY Route.areaCode HAVING COUNT(Trip.tripID) > 0 ORDER BY TotalTrips DESC, TotalDistance DESC;
 
 <img width="817" height="198" alt="image" src="https://github.com/user-attachments/assets/36f17ab2-4086-493f-b7f2-7143e4eb9eaf" />
-
-
-
